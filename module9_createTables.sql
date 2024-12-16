@@ -1,9 +1,9 @@
 DROP TABLE IF EXISTS titles;
 
 CREATE TABLE titles(
-	primary_key VARCHAR PRIMARY KEY,
+	title_id VARCHAR PRIMARY KEY,
 	title VARCHAR	
-	 
+ 
 );
 
 DROP TABLE IF EXISTS employees CASCADE;
@@ -15,7 +15,8 @@ CREATE TABLE employees(
 	first_name VARCHAR,
 	last_name VARCHAR,
 	sex VARCHAR,
-	hire_date DATE
+	hire_date DATE,
+	FOREIGN KEY (emp_title) REFERENCES titles(title_ID)
  
 );
 
